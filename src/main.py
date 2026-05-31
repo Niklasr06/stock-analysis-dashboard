@@ -4,6 +4,7 @@ import yfinance as yf
 import matplotlib.pyplot as plt
 from metrics import analyze_ticker
 from data_loader import load_data
+from visualization import plot_price
 
 
 qqq_data = load_data("QQQ")
@@ -41,3 +42,4 @@ comparison.to_csv(
     "data/comparison_metrics.csv",
     index=False
 )
+plot_price(qqq_data, "QQQ")
