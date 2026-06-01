@@ -1,14 +1,16 @@
 import pandas as pd
-import numpy as np
-import yfinance as yf
-import matplotlib.pyplot as plt
 from metrics import analyze_ticker
 from data_loader import load_data
-from visualization import plot_price
+from visualization import plot_price, plot_comparison
 
 
 qqq_data = load_data("QQQ")
 spy_data = load_data("SPY")
+
+qqq_data["Ticker"] = "QQQ"
+spy_data["Ticker"] = "SPY"
+
+historical_prices = pd.concat([qqq_data, spy_data])
 
 qqq_metrics = analyze_ticker(qqq_data)
 spy_metrics = analyze_ticker(spy_data)
@@ -42,4 +44,8 @@ comparison.to_csv(
     "data/comparison_metrics.csv",
     index=False
 )
+
+historical_prices.to_csv("data/historical_prices", index=False)
 plot_price(qqq_data, "QQQ")
+plot_comparison(qqq_data, "QQQ", spy_data, "SPY")
+
