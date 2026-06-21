@@ -67,10 +67,21 @@ Comparison of AAPL, MSFT, NVDA, and SPY across:
 
 The exported CSVs power a 4-page Power BI dashboard:
 
-- **Executive Summary**: KPI cards (avg. annual return, volatility, Sharpe ratio, best stock), price development chart, cumulative return comparison
-- **Performance Analysis**: annual return and Sharpe ratio by stock, detailed metrics table
-- **Risk Analysis**: daily return distribution, risk vs. return scatter plot, maximum drawdown by stock
-- **Correlation Analysis**: correlation heatmap between all stocks, strongest/weakest correlated pairs
+**Executive Summary** — KPI cards (avg. annual return, volatility, Sharpe ratio, best stock), price development chart, cumulative return comparison
+
+![Executive Summary](images/dashboard_executive_summary.png)
+
+**Performance Analysis** — annual return and Sharpe ratio by stock, detailed metrics table
+
+![Performance Analysis](images/dashboard_performance_analysis.png)
+
+**Risk Analysis** — daily return distribution, risk vs. return scatter plot, maximum drawdown by stock
+
+![Risk Analysis](images/dashboard_risk_analysis.png)
+
+**Correlation Analysis** — correlation heatmap between all stocks, strongest/weakest correlated pairs
+
+![Correlation Analysis](images/dashboard_correlation_analysis.png)
 
 ---
 
