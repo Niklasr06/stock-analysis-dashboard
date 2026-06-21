@@ -65,7 +65,7 @@ Comparison of AAPL, MSFT, NVDA, and SPY across:
 
 ## Power BI Dashboard
 
-The exported CSVs power a 4-page Power BI dashboard:
+The exported CSVs power a 4-page Power BI dashboard. The ready-to-use report file is included in this repository as [stock_analysis_dashboard.pbix](stock_analysis_dashboard.pbix) — open it directly in Power BI Desktop and click "Refresh" to pull in the latest data from the `data/` folder.
 
 **Executive Summary** — KPI cards (avg. annual return, volatility, Sharpe ratio, best stock), price development chart, cumulative return comparison
 
