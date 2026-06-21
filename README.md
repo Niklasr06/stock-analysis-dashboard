@@ -2,14 +2,16 @@
 
 ## Overview
 
-This project analyzes historical market data using Python and compares the performance and risk characteristics of different ETFs.
+This project analyzes historical market data using Python and compares the performance and risk characteristics of multiple stocks.
 
 The current version focuses on the comparison between:
 
-- QQQ (Invesco QQQ Trust)
+- AAPL (Apple Inc.)
+- MSFT (Microsoft Corporation)
+- NVDA (NVIDIA Corporation)
 - SPY (SPDR S&P 500 ETF Trust)
 
-The application retrieves historical price data from Yahoo Finance, calculates key financial metrics, visualizes price trends, and exports comparison results for further analysis in Power BI.
+The application retrieves historical price data from Yahoo Finance, calculates key financial metrics, visualizes price trends, and exports the results as CSV files for an interactive Power BI dashboard.
 
 ---
 
@@ -24,9 +26,8 @@ The application retrieves historical price data from Yahoo Finance, calculates k
 ### Performance Analysis
 
 - Daily Returns
+- Cumulative Returns
 - Annual Return
-- Best Trading Day
-- Worst Trading Day
 
 ### Risk Analysis
 
@@ -42,27 +43,34 @@ The application retrieves historical price data from Yahoo Finance, calculates k
 
 ### Visualization
 
-- Historical price chart
-- Moving average visualization
+- Historical price chart per stock with moving averages
+- Combined cumulative return comparison chart
 - Export of charts as PNG images
 
 ### Benchmark Comparison
 
-Comparison of:
-
-- QQQ
-- SPY
-
-Metrics included:
+Comparison of AAPL, MSFT, NVDA, and SPY across:
 
 - Annual Return
 - Annual Volatility
 - Maximum Drawdown
 - Sharpe Ratio
+- Correlation between daily returns
 
 ### Data Export
 
 - CSV export for Power BI integration
+
+---
+
+## Power BI Dashboard
+
+The exported CSVs power a 4-page Power BI dashboard:
+
+- **Executive Summary**: KPI cards (avg. annual return, volatility, Sharpe ratio, best stock), price development chart, cumulative return comparison
+- **Performance Analysis**: annual return and Sharpe ratio by stock, detailed metrics table
+- **Risk Analysis**: daily return distribution, risk vs. return scatter plot, maximum drawdown by stock
+- **Correlation Analysis**: correlation heatmap between all stocks, strongest/weakest correlated pairs
 
 ---
 
@@ -73,6 +81,7 @@ Metrics included:
 - NumPy
 - Matplotlib
 - Yahoo Finance (yfinance)
+- Power BI
 - Git
 - GitHub
 
@@ -80,32 +89,41 @@ Metrics included:
 
 ## Project Structure
 
-text stock-analysis-dashboard/ │ ├── data/ │   └── comparison_metrics.csv │ ├── images/ │   └── qqq_analysis.png │ ├── src/ │   ├── main.py │   ├── data_loader.py │   ├── metrics.py │   └── visualization.py │ ├── requirements.txt └── README.md 
+```
+stock-analysis-dashboard/
+│
+├── data/
+│   ├── historical_prices.csv
+│   ├── comparison_metrics.csv
+│   └── correlation_matrix.csv
+│
+├── images/
+│   ├── aapl_analysis.png
+│   ├── msft_analysis.png
+│   ├── nvda_analysis.png
+│   ├── spy_analysis.png
+│   └── cumulative_return_comparison.png
+│
+├── src/
+│   ├── main.py
+│   ├── data_loader.py
+│   ├── metrics.py
+│   └── visualization.py
+│
+├── requirements.txt
+└── README.md
+```
 
 ---
 
 ## Example Metrics
 
-| Metric | QQQ | SPY |
-|----------|----------|----------|
-| Annual Return | 22.93% | 16.73% |
-| Annual Volatility | 24.91% | 20.36% |
-| Maximum Drawdown | -35.12% | -33.72% |
-| Sharpe Ratio | 0.92 | 0.82 |
-
----
-
-## Example Visualization
-
-The project generates charts displaying:
-
-- Historical price development
-- 50-Day Moving Average
-- 200-Day Moving Average
-
-Example output:
-
-QQQ Analysis
+| Metric | AAPL | MSFT | NVDA | SPY |
+|---|---|---|---|---|
+| Annual Return | 26.88% | 18.67% | 68.97% | 16.44% |
+| Annual Volatility | 31.33% | 29.82% | 52.26% | 20.35% |
+| Maximum Drawdown | -33.36% | -37.15% | -66.35% | -33.72% |
+| Sharpe Ratio | 0.86 | 0.63 | 1.32 | 0.81 |
 
 ---
 
@@ -113,11 +131,9 @@ QQQ Analysis
 
 Planned features include:
 
-- Interactive Power BI dashboard
 - Portfolio analysis with multiple assets
 - Additional benchmark comparisons
 - CAGR calculation
-- Risk-adjusted performance metrics
 - Streamlit web dashboard
 - Automated reporting
 
@@ -127,19 +143,29 @@ Planned features include:
 
 Clone the repository:
 
-bash git clone https://github.com/your-username/stock-analysis-dashboard.git cd stock-analysis-dashboard 
+```bash
+git clone https://github.com/your-username/stock-analysis-dashboard.git
+cd stock-analysis-dashboard
+```
 
 Create a virtual environment:
 
-bash python -m venv venv source venv/bin/activate 
+```bash
+python -m venv venv
+source venv/bin/activate
+```
 
 Install dependencies:
 
-bash pip install -r requirements.txt 
+```bash
+pip install -r requirements.txt
+```
 
-Run the project:
+Run the project (from the project root):
 
-bash python src/main.py 
+```bash
+python src/main.py
+```
 
 ---
 
@@ -147,5 +173,5 @@ bash python src/main.py
 
 Niklas Ringeisen
 
-Digital Business Student  
+Digital Business Student
 Hochschule Reutlingen
