@@ -113,7 +113,8 @@ stock-analysis-dashboard/
 │   ├── msft_analysis.png
 │   ├── nvda_analysis.png
 │   ├── spy_analysis.png
-│   └── cumulative_return_comparison.png
+│   ├── cumulative_return_comparison.png
+│   └── dashboard_*.png            # Power BI dashboard pages
 │
 ├── src/
 │   ├── main.py
@@ -121,6 +122,7 @@ stock-analysis-dashboard/
 │   ├── metrics.py
 │   └── visualization.py
 │
+├── stock_analysis_dashboard.pbix  # Power BI dashboard
 ├── requirements.txt
 └── README.md
 ```
@@ -155,7 +157,7 @@ Planned features include:
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/stock-analysis-dashboard.git
+git clone https://github.com/Niklasr06/stock-analysis-dashboard.git
 cd stock-analysis-dashboard
 ```
 
